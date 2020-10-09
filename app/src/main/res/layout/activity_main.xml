@@ -34,7 +34,7 @@
     <TextView
         android:id="@+id/weather_result"
         android:layout_width="385dp"
-        android:layout_height="325dp"
+        android:layout_height="250dp"
         android:layout_marginTop="216dp"
         android:background="@drawable/border"
         android:text="Weather Data"
@@ -49,7 +49,7 @@
         android:layout_width="260dp"
         android:layout_height="58dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="548dp"
+        android:layout_marginTop="500dp"
         android:background="@drawable/background_1"
         android:text="Get Weather"
         app:layout_constraintStart_toStartOf="parent"

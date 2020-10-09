@@ -22,12 +22,13 @@ public class MainActivity extends AppCompatActivity {
     Button getWeatherBtn;
     TextView resultWeatherText;
     private Spinner citySpinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Lat and Longitude of Auckland
-        final String url = getUrl("Auckland");
+        citySpinner = findViewById(R.id.citySpinner);
+        String url = getUrl(getCityNamefromSpinner());
         resultWeatherText = findViewById(R.id.weather_result);
         getWeatherBtn = findViewById(R.id.get_weather_data_btn);
 
@@ -35,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                String city = getCityNamefromSpinner();
+                String url = getUrl(city);
 
+                Log.e("data", city);
+                Log.e("data", url);
                 JsonObjectRequest jsonObjectRequest = new
                         JsonObjectRequest(Request.Method.GET, url,
                         new JSONObject(),
@@ -60,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                                             "Wind Direction: " + windDirection + "\n" +
                                             "Wind Speed: " + currentWindSpeed;
 
-
                                     resultWeatherText.setText(result);
                                     Log.e("data", currentTemp);
                                 } catch (Exception e) {
@@ -79,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    String getCityNamefromSpinner() {
+        return String.valueOf(citySpinner.getSelectedItem());
     }
 
     String getUrl(String city) {
