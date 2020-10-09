@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Unitec Assignment 2 </string>
+    <string name="country_prompt">Choose a Day</string>
+    <string-array name="city_array">
+        <item>Auckland</item>
+        <item>Wellington</item>
+        <item>Christchurch</item>
+        <item>Hamilton</item>
+        <item>Tauranga</item>
+        <item>Dunedin</item>
+    </string-array>
+
+</resources>
