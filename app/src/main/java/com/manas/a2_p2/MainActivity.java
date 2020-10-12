@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 String url = getUrl(city);
 
                 Log.e("data", city);
-                Log.e("data", url);
+
                 JsonObjectRequest jsonObjectRequest = new
                         JsonObjectRequest(Request.Method.GET, url,
                         new JSONObject(),
